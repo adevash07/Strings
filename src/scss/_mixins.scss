@@ -1,0 +1,68 @@
+@mixin maxQ($arg) {
+  @media screen and (max-width: $arg) {
+    @content;
+  }
+}
+
+@mixin minQ($arg) {
+  @media screen and (min-width: $arg) {
+    @content;
+  }
+}
+@mixin minHeight($arg) {
+  @media screen and (min-height: $arg) {
+    @content;
+  }
+}
+
+@mixin maxQH($arg1, $arg2) {
+  @media screen and (max-width: $arg1) and (max-height: $arg2) {
+    @content;
+  }
+}
+
+@mixin maxQminH($arg1, $arg2) {
+  @media screen and (max-width: $arg1) and (min-height: $arg2) {
+    @content;
+  }
+}
+
+@mixin minQmaxQ($arg1, $arg2) {
+  @media screen and (min-width: $arg1) and (max-width: $arg2) {
+    @content;
+  }
+}
+
+@mixin R-tXY($O, $X, $Y) {
+  transform: rotate($O) translateX($X) translateY($Y);
+}
+
+@mixin FlexRowCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin FlexColCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@mixin FlexRow-AlignCenter {
+  display: flex;
+  align-items: center;
+}
+@mixin FlexRow-JustifyCenter {
+  display: flex;
+  justify-content: center;
+}
+@mixin FlexCol-JustifyCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@mixin FlexCol-JustifyCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

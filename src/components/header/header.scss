@@ -1,0 +1,15 @@
+@use "../../scss/index.scss" as *;
+.header {
+  display: flex;
+  padding: 10px;
+  height: 50spx;
+  background-color: $primary;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  .logo {
+    svg {
+      fill: $second;
+    }
+  }
+}
