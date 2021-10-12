@@ -8,7 +8,9 @@ export default function Header({ handleLogOut }) {
       <h2 className='logo'>
         <SiSpringCreators /> Chat
       </h2>
-      <button onClick={() => handleLogOut()}>Log Out</button>
+      <button className='btn' onClick={() => handleLogOut()}>
+        Log Out
+      </button>
     </div>
   );
 }

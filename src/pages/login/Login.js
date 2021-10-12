@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import { SiSpringCreators } from "react-icons/si";
 import { FcGoogle } from "react-icons/fc";
-import { BsFacebook } from "react-icons/bs";
+import { MdPersonAddDisabled } from "react-icons/md";
 import axios from "axios";
 import "./login.scss";
 import firebase from "firebase/compat/app";
 
 import { auth } from "../../firebase.js/firebase";
+import { useHistory } from "react-router";
 
 export default function Login() {
   const [userName, setuserName] = useState("");
   const [password, setpassword] = useState("");
   const [error, seterror] = useState("");
-
+  const history = useHistory();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const authObject = {
-      "Project-ID": process.env.STRING_ID,
+      "Project-ID": process.env.REACT_APP_STRING_ID,
       "User-Name": userName,
       "User-Secret": password,
     };
@@ -26,7 +27,9 @@ export default function Login() {
       });
       localStorage.setItem("username", userName);
       localStorage.setItem("password", password);
-      window.location.reload();
+      setTimeout(() => {
+        history.push("/chats");
+      }, 500);
     } catch (error) {
       seterror("Opps, in correct credentials");
       setTimeout(() => {
@@ -89,10 +92,13 @@ export default function Login() {
             className='button__input'
             type='button'
             id='facebook'
-            onClick={() =>
-              auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider())
-            }>
-            <BsFacebook size={20} fill='blue' /> Sign in with Facebook
+            onClick={(e) => {
+              setuserName("guest");
+              setpassword("19955");
+              handleSubmit(e);
+            }}>
+            <MdPersonAddDisabled size={20} fill='blue' /> Login directly as a
+            Guest
           </button>
         </form>
       </div>

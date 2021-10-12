@@ -9,6 +9,8 @@ export default function Chat() {
   const handleLogOut = async () => {
     await auth.signOut();
     history.push("/");
+    localStorage.removeItem("username");
+    localStorage.removeItem("password");
   };
   return (
     <div className='chat'>
