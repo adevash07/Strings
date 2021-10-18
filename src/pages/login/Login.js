@@ -31,10 +31,10 @@ export default function Login() {
         history.push("/chats");
       }, 500);
     } catch (error) {
-      seterror("Opps, in correct credentials");
+      seterror("Opps, Something went wrong, try once more please 🙏");
       setTimeout(() => {
         seterror(" ");
-      }, 2000);
+      }, 2500);
     }
   };
   return (

@@ -47,11 +47,14 @@
 
 .btn {
   padding: 14px;
-  background: $grad;
-  border: 2px solid $second;
-  color: white;
-  box-shadow: 0px 10px 21px 0px rgba(255, 255, 255, 0.75);
 
+  border: none;
+  background: $gradLighter;
+  color: black;
+  box-shadow: 0px 10px 21px 0px rgba(255, 255, 255, 0.75);
+  &:hover {
+    background: $grad;
+  }
   &:active {
     border: 2px solid black;
     box-shadow: 0px 10px 21px 0px rgba(255, 255, 255, 0.3);
@@ -80,6 +83,10 @@
 
   svg {
     vertical-align: text-bottom;
+  }
+
+  &:hover {
+    background-color: $second;
   }
 
   &:active {
